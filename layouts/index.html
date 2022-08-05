@@ -36,7 +36,6 @@
   {{ end }}
   {{ partial "optional-about.html" . }}
   </section>
-
   <section id="writing">
     <span class="h1"><a href="{{ .Site.Params.mainSection | absURL }}">{{ .Site.Params.mainSectionTitle | default "Writings" }}</a></span>
     {{ if (and (and (isset .Site.Params "tagsoverview") (eq .Site.Params.tagsOverview true)) (gt (len .Site.Taxonomies.tags) 0)) }}
@@ -51,7 +50,6 @@
     </span>
     <span class="h2">Most recent</span>
     {{ end }}
-
     {{ $showAllPostsOnHomePage := false }}
     {{ if (isset .Site.Params "showallpostsonhomepage") }}
       {{ $showAllPostsOnHomePage = .Site.Params.ShowAllPostsOnHomePage }}
@@ -67,9 +65,7 @@
         </li>
       {{ end }}
     </ul>
-
     {{ partial "pagination.html" . }}
-
     {{ else }}
     <ul class="post-list">
       {{ .Scratch.Set "count" 5 }}
@@ -85,7 +81,6 @@
     </ul>
     {{ end }}
   </section>
-
   {{ $showProjectsList := false }}
   {{ if (isset .Site.Params "showprojectslist") }}
     {{ $showProjectsList = .Site.Params.showProjectsList }}

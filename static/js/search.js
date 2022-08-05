@@ -54,7 +54,7 @@ var searchFunc = function(path, searchId, contentId) {
     dataType: "xml",
     success: function(xmlResponse) {
       // get the contents from search data
-      var datas = $("entry", xmlResponse).map(function() {
+      var data = $("entry", xmlResponse).map(function() {
         return {
           title: $("title", this).text(),
           content: $("content", this).text(),
@@ -75,7 +75,7 @@ var searchFunc = function(path, searchId, contentId) {
           return;
         }
         // perform local searching
-        datas.forEach(function(data) {
+        data.forEach(function(data) {
           var matches = 0;
           if (!data.title || data.title.trim() === "") {
             data.title = "Untitled";
@@ -86,7 +86,7 @@ var searchFunc = function(path, searchId, contentId) {
           var indexTitle = -1;
           var indexContent = -1;
           var firstOccur = -1;
-          // only match artiles with not empty contents
+          // only match articles with not empty contents
           if (dataContent !== "") {
             keywords.forEach(function(keyword) {
               indexTitle = dataTitle.indexOf(keyword);

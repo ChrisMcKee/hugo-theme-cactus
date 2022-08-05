@@ -3,9 +3,7 @@
 {{ partial "head.html" . }}
 <body class="max-width mx-auto px3 ltr">
   <div class="content index py4">
-
   {{ partial "page_nav.html" . }}
-
   <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
     <header>
       <h1 class="posttitle" itemprop="name headline">
@@ -79,18 +77,12 @@
       {{ .Content}}
     </div>
   </article>
-
   {{ partial "related.html" . }}
-
   {{ partial "comments.html" . }}
-
   {{ partial "page_nav_mobile.html" . }}
-
   {{ partial "footer.html" . }}
-
   </div>
 </body>
-
 <link rel="stylesheet" href={{ "/lib/font-awesome/css/all.min.css" | relURL }}>
 <script src={{ "/lib/jquery/jquery.min.js" | relURL }}></script>
 <script src={{ "/js/main.js" | relURL }}></script>
@@ -114,8 +106,6 @@
     }
   };
 </script>
-<script type="text/javascript" id="MathJax-script" async
-  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">
-</script>
+<script type="text/javascript" id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{ end }}
 </html>

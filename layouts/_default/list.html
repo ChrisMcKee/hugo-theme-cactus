@@ -1,12 +1,10 @@
 {{ define "main"}}
 <div id="archive">
   <ul class="post-list">
-
   {{ $pages := .Paginator.Pages }}
   {{ if .Site.Params.showAllPostsArchive }}
     {{ $pages = .Pages }}
   {{ end }}
-
   {{ range (sort $pages "Date" "desc") }}
     {{ $pageYear := (.Date.Format "2006") }}
     {{ if (ne $pageYear ($.Scratch.Get "year")) }}
@@ -17,7 +15,7 @@
       <div class="meta">
         <time datetime="{{ time .Date }}" itemprop="datePublished">{{ .Date.Format (.Site.Params.dateFormat | default "2006-01-02") }}</time>
       </div>
-      <span>    
+      <span>
         <a class="" href="{{ .Permalink }}">{{ if .Title }} {{ .Title }} {{ else }} Untitled {{ end }}</a>
       </span>
     </li>
